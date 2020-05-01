@@ -18,7 +18,7 @@
 * Abdul Al-Haimi
 
 We especially thank Actualmed for their collaboration in compiling this medical data.
-Note: Data sample **CR.1.2.840.113564.1722810170.202003241819551876.1003000225002** was removed from this dataset due to low image quality.
+* Note: Data sample **CR.1.2.840.113564.1722810170.202003241819551876.1003000225002** was removed from this dataset due to low image quality.
 
 We are building this dataset as a part of the COVIDx dataset to enhance our models for COVID-19 detection (COVID-Net) and COVID-19 risk stratification (COVID-RiskNet):
 * COVID-Net: https://github.com/lindawangg/COVID-Net
