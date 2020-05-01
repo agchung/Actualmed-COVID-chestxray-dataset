@@ -4,6 +4,7 @@ import csv
 parser = argparse.ArgumentParser(description='Convert CSV format to standard CSV used by COVIDx.')
 parser.add_argument('--filename', type=str, help='full path to csv file', required=True)
 parser.add_argument('--out_csvname', default='metadata.csv', type=str, help='name of output csv file')
+parser.add_argument('--imagefolder', default='images', type=str, help='path to image folder')
 args = parser.parse_args()
 
 infos = []
@@ -16,13 +17,14 @@ notes_mapping = {'normal': 'Negative (covid-19 viral infection is excluded)',
 with open(args.filename, newline='') as csvfile:
     reader = csv.reader(csvfile, delimiter=';')
     for row in reader:
-        xray_info = {'patientid': row[0],
-                     'imagename': row[1],
-                     'finding': label_mapping[row[2]],
-                     'view': row[3],
-                     'modality': 'X-ray',
-                     'notes': notes_mapping[row[2]] + ', date taken (YYYYMMDD): ' + row[5]}
-        infos.append(xray_info)
+        if os.path.exists(os.path.join(args.imagefolder, row[1])):
+            xray_info = {'patientid': row[0],
+                         'imagename': row[1],
+                         'finding': label_mapping[row[2]],
+                         'view': row[3],
+                         'modality': 'X-ray',
+                         'notes': notes_mapping[row[2]] + ', date taken (YYYYMMDD): ' + row[5]}
+            infos.append(xray_info)
 
 titles = ['patientid', 'offset', 'sex', 'age', 'finding', 'survival',
           'temperature', 'pO2 saturation', 'view', 'modality',
