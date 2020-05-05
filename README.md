@@ -17,7 +17,7 @@
 * Kim-Ann Git (Selayang Hospital)
 * Abdul Al-Haimi
 
-We thank Actualmed, and especially José Antonio Heredia Álvaro and Pau Agustí Ballester, for their collaboration in compiling this medical data.
+We especially thank Actualmed, and José Antonio Heredia Álvaro and Pau Agustí Ballester of Universitat Jaume I (UJI), for their collaboration in compiling this medical data.
 
 We are building this dataset as a part of the COVIDx dataset to enhance our models for COVID-19 detection (COVID-Net) and COVID-19 risk stratification (COVID-RiskNet):
 * COVID-Net: https://github.com/lindawangg/COVID-Net
